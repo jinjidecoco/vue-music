@@ -1,0 +1,30 @@
+<template>
+  <div id="app">
+    <tab></tab>
+    <keep-alive>
+      <router-view>
+      </router-view>
+    </keep-alive>
+    <player></player>
+  </div>
+</template>
+<script>
+import Tab from './components/tab.vue'
+import player from './components/player'
+export default {
+  name: 'App',
+  components: {
+    Tab,player
+  },
+}
+</script>
+<style>
+@import './css/reset.less';
+#app {
+  font-family:  Helvetica-Light, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-ox-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+</style>

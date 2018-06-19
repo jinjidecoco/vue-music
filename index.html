@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+  <title>瞎听音乐</title>
+  <style type="text/css">
+    body {
+      background: #f2f3f4;
+      width: 100%;
+      /* height:1000px; */
+      -webkit-overflow-scrolling: touch;
+    }
+    body::-webkit-scrollbar {
+       display: none;
+    } 
+    /* 根据屏幕设置像素大小 */
+    @media screen and (max-width:321px) {
+      #app {
+        font-size: 15px
+      }
+    }
+    @media screen and (min-width:321px) and (max-width:400px) {
+      #app {
+        font-size: 16px
+      }
+    }
+    @media screen and (min-width:400px) {
+      #app {
+        font-size: 18px
+      }
+    }
+
+  </style>
+  <script>
+    ;
+    (function (doc, win, undefined) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (clientWidth === undefined) return;
+          docEl.style.fontSize = clientWidth / 7.5 + 'px';  // 50
+        };
+      if (doc.addEventListener === undefined) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false)
+    })(document, window);
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
