@@ -27,3 +27,8 @@ export function getSongLyric (id) {
   const url = urlPrefix + `/lyric?id=${id}`
   return axios.get(url)
 }
+// 获取排行榜
+export function getRank (idx) {
+  const url = urlPrefix + `/top/list?idx=${idx}`
+  return axios.get(url)
+}

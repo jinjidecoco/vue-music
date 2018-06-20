@@ -1,8 +1,8 @@
 <template>
   <!-- v-show="playList.length > 0" -->
     <div class='player' v-show="playList.length > 0" > 
-      <!-- <transition name = 'normal'
-      @enter ='enter' @after-enter='afterEnter' @leave ='leave' after-leave = 'afterLeave'> -->
+      <transition name ='normal'> 
+          <!-- @enter ='enter' @after-enter='afterEnter' @leave ='leave' after-leave = 'afterLeave' -->
         <!-- 正常模式  -->
         <div class="normal-player" v-show ='isNormal'>
             <div class='bg-filter'>
@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-      <!-- </transition> -->
+      </transition>
         <!-- 迷你模式 -->
         <div class='mini-player' v-show ='!isNormal'>
             <div class='mini-handle'>  
@@ -445,6 +445,22 @@ export default {
     width:200px;
     white-space: nowrap;
     overflow: hidden;
+  }
+
+  &.normal-enter-active, &.normal-leave-active {
+    transition : all 0.4s;
+    .head,.bottom {
+       transition: all 0.4s cubic-bezier(0.86, 0.18, 0.82, 1.32)
+    }
+  } 
+  &.normal-enter, &.normal-leave-to {
+    opacity: 0;
+    .head {
+      transform: translate3d(0, -100px, 0)
+    }
+    .bottom{
+      transform:translate3d(0, 100px, 0)
+    }
   }
 }
 @keyframes rotate {
