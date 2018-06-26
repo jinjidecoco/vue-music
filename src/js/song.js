@@ -14,7 +14,7 @@ function singName (data) {
   singer = data.map((item) => {
     return item.name
   })
-  return singer.join('/')
+  return singer.join('/') // 数组转为字符串
 }
 export function creatSongList (data) {
   return new Song({

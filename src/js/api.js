@@ -32,3 +32,9 @@ export function getRank (idx) {
   const url = urlPrefix + `/top/list?idx=${idx}`
   return axios.get(url)
 }
+
+// 获取歌手信息
+export function getSinger () {
+  const url = urlPrefix + '/toplist/artist'
+  return axios.get(url)
+}

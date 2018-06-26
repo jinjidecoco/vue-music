@@ -27,13 +27,11 @@ export default {
   methods: {
     _getRank() {
       ranklist.forEach(item => {
-        console.log(item);
         getRank(item).then(res => {
           if (res.status === 200) {
             let list = res.data.playlist;
             list.tracks = list.tracks.splice(0, 3);
             this.playList.push(list);
-            console.log(this.playList);
           }
         });
       });
@@ -61,6 +59,7 @@ export default {
         margin-left: 20px;
         p {
           font-size: 14px;
+          font-weight:400;
           line-height: 2;
           white-space: nowrap;
           overflow: hidden;

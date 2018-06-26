@@ -25,6 +25,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-ox-font-smoothing: grayscale;
   color: #2c3e50;
+  /* font-family: 12px/1.5 arial,Helvetica Neue,tahoma,"Hiragino Sans GB",Microsoft YaHei,\5b8b\4f53; */
 }
 
 </style>
