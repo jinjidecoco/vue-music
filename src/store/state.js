@@ -1,6 +1,7 @@
 import { playMode } from '../js/config.js'
 const state = {
   singMenu: {},
+  singer: [],
   isNormal: false,
   playing: false,
   playList: [],

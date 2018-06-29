@@ -1,16 +1,17 @@
 <template>
     <div class="music-list">
         <ul class='sing-list' v-for ='(item,index) in menuLists' >
-            <li  @click ='selectSong(item,index)' :id = item.id >
+            <li  @click ='selectSong(item,index)' :key = item.id >
                 <div class='song-index'>{{index +1 }}</div>
                 <div class='song-info'>
                     <h1 class='song-name'>{{item.name}} </h1>
-                    <p class='song-player'>{{item.singer}} - {{item.album.name}}</p>
-                    <!-- <img :src=item.album.picUrl alt=""> -->
+                    <p class='song-player'>{{item.singer}} - {{item.album}} </p>
+                    <p class='song-player'>{{item.alia}}</p>
+                    <!-- <img :ssrc=item.album.picUrl alt=""> -->
                 </div> 
-                <div class='player' style=''>
+                <!-- <div class='player' style=''>
                   <i class='iconfont icon-zhongxinshipin'></i>
-                </div>
+                </div> -->
             </li>
         </ul>
     </div>
@@ -50,7 +51,7 @@ export default {
       }
       .song-info {
         width: 270px;
-        margin-right:10px;
+        margin-right: 10px;
         .song-player {
           font-size: 12px;
           color: #888;
@@ -60,7 +61,7 @@ export default {
           overflow: hidden;
         }
         .song-name {
-          font-size:18px;
+          font-size: 18px;
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;

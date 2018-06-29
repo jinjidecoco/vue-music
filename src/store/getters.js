@@ -7,6 +7,7 @@ export const playList = state => state.playList // 播放列表
 export const squenceList = state => state.squenceList // 顺序列表
 export const mode = state => state.mode // 播放模式
 export const curIndex = state => state.curIndex // 播放的索引
+export const singer = state => state.singer
 export const curSong = (state) => {
   return state.playList[state.curIndex] || {}
 }

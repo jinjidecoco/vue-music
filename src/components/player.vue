@@ -2,8 +2,6 @@
   <!-- v-show="playList.length > 0" -->
     <div class='player' v-show="playList.length > 0" > 
       <transition name ='normal'> 
-          <!-- @enter ='enter' @after-enter='afterEnter' @leave ='leave' after-leave = 'afterLeave' -->
-        <!-- 正常模式  -->
         <div class="normal-player" v-show ='isNormal'>
             <div class='bg-filter'>
                 <img :src=curSong.image alt="">
@@ -73,12 +71,12 @@
     </div>
 </template>
 <script>
-import { mapGetters, mapMutations, mapActions } from "vuex"
-import { getSongLink,getSongLyric } from "../js/api.js"
-import { playMode } from "../js/config.js"
-import Lyric from 'lyric-parser'
-import progressBar from "./progress-bar"
-import { shuffle } from "../js/util.js"
+import { mapGetters, mapMutations, mapActions } from "vuex";
+import { getSongLink, getSongLyric } from "../js/api.js";
+import { playMode } from "../js/config.js";
+import Lyric from "lyric-parser";
+import progressBar from "./progress-bar";
+import { shuffle } from "../js/util.js";
 
 export default {
   data() {
@@ -87,8 +85,8 @@ export default {
       songReady: false,
       currentTime: 0,
       currentLineNum: 0,
-      curShow:'player',
-      songLyric:'',
+      curShow: "player",
+      songLyric: ""
     };
   },
   created() {},
@@ -124,7 +122,7 @@ export default {
   methods: {
     back() {
       this.setNormal(false);
-      this.curShow = 'player'
+      this.curShow = "player";
     },
     ...mapMutations({
       setNormal: "SET_IS_NORMAL",
@@ -147,22 +145,22 @@ export default {
           console.log(err);
         });
     },
-    _getSongLyric (id) {
-      if(!id) {
+    _getSongLyric(id) {
+      if (!id) {
         return;
-      } 
-      getSongLyric (id)
+      }
+      getSongLyric(id)
         .then(res => {
-          if(res.status === 200){
+          if (res.status === 200) {
             // console.log(res)
-            this.songLyric = new Lyric(res.data.lrc.lyric,this.handleLyric)
+            this.songLyric = new Lyric(res.data.lrc.lyric, this.handleLyric);
           }
-          if(this.playing){
-            console.log('滚动');
-       
+          if (this.playing) {
+            console.log("滚动");
+
             this.songLyric.play();
-            this.currentLineNum = 0
-            this.$refs.lyricList.scrollTo(0, 0, 1000)
+            this.currentLineNum = 0;
+            this.$refs.lyricList.scrollTo(0, 0, 1000);
           }
         })
         .catch(err => {
@@ -171,13 +169,13 @@ export default {
           // console.log(err);
         });
     },
-    handleLyric ({lineNum, txt}) {
-      this.currentLineNum = lineNum
+    handleLyric({ lineNum, txt }) {
+      this.currentLineNum = lineNum;
       if (lineNum > 5) {
-        let lineEl = this.$refs.lyricLine[lineNum - 5]
-        this.$refs.lyricList.scrollToElement(lineEl, 1000)
+        let lineEl = this.$refs.lyricLine[lineNum - 5];
+        this.$refs.lyricList.scrollToElement(lineEl, 1000);
       } else {
-        this.$refs.lyricList.scrollTo(0, 0, 1000)
+        this.$refs.lyricList.scrollTo(0, 0, 1000);
       }
     },
     changePlay() {
@@ -217,10 +215,10 @@ export default {
         this.next();
       }
     },
-    loop () {
-      this.$refs.audio.currentTime = 0
-      this.$refs.audio.play()
-      this.setPlaying(true)
+    loop() {
+      this.$refs.audio.currentTime = 0;
+      this.$refs.audio.play();
+      this.setPlaying(true);
     },
     error() {
       this.songReady = true;
@@ -251,8 +249,8 @@ export default {
       this.setCurIndex(index);
       console.log(index);
     },
-    showLyric (id) {
-      this.curShow = 'SongLyric'
+    showLyric(id) {
+      this.curShow = "SongLyric";
       this._getSongLyric(this.curSong.id);
       // this.showSongLyric = true
     },
@@ -330,6 +328,8 @@ export default {
         font-size: 12px;
         padding-top: 5px;
         text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
       }
       .sing-name {
         // height:16px;
@@ -362,29 +362,30 @@ export default {
         animation-play-state: paused;
       }
     }
-    .showLyric{
-      height:400px;
-      margin-top:-20px;
-      padding:15px;
+    .showLyric {
+      height: 400px;
+      margin-top: -20px;
+      padding: 15px;
       overflow-y: scroll;
       text-align: center;
-      width:80%;
-      margin:-20px auto 0 auto;
-      .text{
-        font-size:16px;
-        line-height:36px;
+      width: 80%;
+      margin: -20px auto 0 auto;
+      .text {
+        font-size: 16px;
+        line-height: 36px;
         &.current {
-          color: #FFF;
+          color: #fff;
         }
       }
       // overflow: hidden;
     }
     .showLyric ::-webkit-scrollbar {
-        display: none;
+      display: none;
     }
     img {
       width: 260px;
       height: 260px;
+      display: inline-block;
       border-radius: 50%;
     }
   }
@@ -410,6 +411,18 @@ export default {
         }
       }
     }
+  }
+  &.normal-enter-active,
+  &.normal-leave-active {
+    transition: all 0.4s;
+    .top,
+    .bottom {
+      transition: all 0.4s cubic-bezier(0.86, 0.18, 0.82, 1.32);
+    }
+  }
+  &.normal-enter,
+  &.normal-leave-to {
+    opacity: 0;
   }
 }
 .player .mini-player {
@@ -442,24 +455,27 @@ export default {
     }
   }
   .mini-desc {
-    width:200px;
+    width: 200px;
     white-space: nowrap;
     overflow: hidden;
   }
 
-  &.normal-enter-active, &.normal-leave-active {
-    transition : all 0.4s;
-    .head,.bottom {
-       transition: all 0.4s cubic-bezier(0.86, 0.18, 0.82, 1.32)
+  &.normal-enter-active,
+  &.normal-leave-active {
+    transition: all 0.4s;
+    .head,
+    .bottom {
+      transition: all 0.4s cubic-bezier(0.86, 0.18, 0.82, 1.32);
     }
-  } 
-  &.normal-enter, &.normal-leave-to {
+  }
+  &.normal-enter,
+  &.normal-leave-to {
     opacity: 0;
     .head {
-      transform: translate3d(0, -100px, 0)
+      transform: translate3d(0, -100px, 0);
     }
-    .bottom{
-      transform:translate3d(0, 100px, 0)
+    .bottom {
+      transform: translate3d(0, 100px, 0);
     }
   }
 }

@@ -23,6 +23,6 @@ export function creatSinger (data) {
     name: data.name,
     avatar: data.picUrl,
     aliaName: data.alias.join('/'),
-    initial: sortInitial(data)
+    initial: sortInitial(data)  // 第一个字母
   })
 }

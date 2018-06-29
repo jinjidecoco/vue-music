@@ -18,9 +18,9 @@ export const selectedPlay = function ({commit, state}, {list, index}) {
     index = findIndex(randomList, list[index])
   } else {
     commit(types.SET_PLAY_LIST, list)
+    console.log(list)
   }
   commit(types.SET_IS_NORMAL, true)
   commit(types.SET_PLAYING, true)
   commit(types.SET_CUR_INDEX, index)
 }
-

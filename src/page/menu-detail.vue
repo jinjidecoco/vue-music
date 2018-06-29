@@ -24,7 +24,7 @@
              <span class='play-all'>播放全部</span> 
              <span class='song-count'>(共{{songCount}}首)</span>
             </h1>
-           <song-list :menuLists='menuLists' @selected='selectItem'></song-list>
+           <song-list :menu-lists='menuLists' @selected='selectItem'></song-list>
         </div>
         <div class='loading-box' v-show ='!menuLists.length'>
            <Loading></Loading>
@@ -182,6 +182,10 @@ export default {
     h1 {
       height: 40px;
       border-bottom: 1px solid #e4e4e4;
+      i{ 
+        font-size:18px;  
+        font-weight:800
+      }
       .play-all {
         font-size: 18px;
         line-height: 40px;

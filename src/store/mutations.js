@@ -20,6 +20,9 @@ const mutations = {
   },
   [types.SET_CUR_INDEX] (state, curIndex) {
     state.curIndex = curIndex
+  },
+  [types.SET_SINGER] (state, singer) {
+    state.singer = singer
   }
 }
 export default mutations

@@ -38,3 +38,8 @@ export function getSinger () {
   const url = urlPrefix + '/toplist/artist'
   return axios.get(url)
 }
+// 获取歌手单曲
+export function getSingerMusic (id) {
+  const url = urlPrefix + `/artists?id=${id}`
+  return axios.get(url)
+}

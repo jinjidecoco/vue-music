@@ -1,5 +1,5 @@
 export default class Song {
-  constructor ({id, mid, singer, name, album, duration, image}) {
+  constructor ({id, mid, singer, name, album, duration, image, alia}) {
     this.id = id
     this.mid = mid
     this.singer = singer
@@ -7,6 +7,7 @@ export default class Song {
     this.album = album
     this.duration = duration
     this.image = image
+    this.alia = alia
   }
 }
 function singName (data) {
@@ -22,8 +23,19 @@ export function creatSongList (data) {
     mid: data.mid,
     singer: singName(data.artists),
     name: data.name,
-    album: data.album,
+    album: data.album.name,
     duration: data.duration,
     image: data.album.picUrl
+  })
+}
+
+export function creatSong (data) {
+  return new Song({
+    id: data.id,
+    name: data.name,
+    singer: singName(data.ar),
+    album: data.al.name,
+    image: data.al.picUrl,
+    alia: data.alia[0]
   })
 }

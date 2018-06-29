@@ -3,7 +3,7 @@
     <router-link class="tab-item" to="/home">
       <span class="tab-link">首页</span>
     </router-link>
-    <router-link class="tab-item" to="/player">
+    <router-link class="tab-item" to="/singer">
       <span class="tab-link">歌手</span>
     </router-link>
     <router-link class="tab-item" to="/rank">
