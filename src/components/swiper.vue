@@ -32,7 +32,7 @@ export default {
           }
         })
         .catch(err => {
-          console.log(2);
+          console.log(err);
         });
     }
   }
@@ -44,7 +44,7 @@ export default {
   background: #8467b5;
   width: 100%;
   height: 180px;
-  padding: 5px 8px;
+  padding: 10px 10px;
   box-sizing: border-box;
 
   img {

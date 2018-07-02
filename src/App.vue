@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <search-bar></search-bar>
     <tab></tab>
     <keep-alive>
       <router-view>
@@ -9,12 +10,13 @@
   </div>
 </template>
 <script>
+import SearchBar from './components/search-bar.vue'
 import Tab from './components/tab.vue'
-import player from './components/player'
+import Player from './components/player'
 export default {
   name: 'App',
   components: {
-    Tab,player
+    Tab,Player,SearchBar
   },
 }
 </script>

@@ -22,7 +22,7 @@ export default {
   props: {
     menuLists: {
       type: Array,
-      defauly: []
+      default: []
     }
   },
   data() {

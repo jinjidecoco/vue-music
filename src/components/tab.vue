@@ -9,9 +9,9 @@
     <router-link class="tab-item" to="/rank">
       <span class="tab-link">排行</span>
     </router-link>
-    <router-link class="tab-item" to="/search">
+    <!-- <router-link class="tab-item" to="/search">
       <span class="tab-link">搜索</span>
-    </router-link>
+    </router-link> -->
   </div>
 </template>
 <script>
@@ -32,6 +32,7 @@ export default {
   height:45px;
   line-height:45px;
   background: #8467b5;
+  margin-top: -15px;
   .tab-item {
     flex: 1;
     text-align: center;

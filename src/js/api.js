@@ -43,3 +43,8 @@ export function getSingerMusic (id) {
   const url = urlPrefix + `/artists?id=${id}`
   return axios.get(url)
 }
+// 获取热门搜索
+export function getHotSong () {
+  const url = urlPrefix + `/search/hot`
+  return axios.get(url)
+}
