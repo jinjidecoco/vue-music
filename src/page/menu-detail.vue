@@ -76,7 +76,7 @@ export default {
 
     miniIcon() {
       console.log(this.isNormal);
-      return this.isNormal
+      return this.isNormal;
       // if(!this.isNormal){
       //   return
       // }else{
@@ -115,7 +115,7 @@ export default {
       });
     },
     ...mapMutations({
-       setNormal: "SET_IS_NORMAL"
+      setNormal: "SET_IS_NORMAL"
     }),
     ...mapActions(["selectedPlay"])
   }
@@ -176,15 +176,15 @@ export default {
   .menu-list {
     padding: 8px 0 8px 8px;
     background: #fff;
-    margin-top:5px;
+    margin-top: 5px;
     border-radius: 10px;
     min-height: 100%;
     h1 {
       height: 40px;
       border-bottom: 1px solid #e4e4e4;
-      i{ 
-        font-size:18px;  
-        font-weight:800
+      i {
+        font-size: 18px;
+        font-weight: 800;
       }
       .play-all {
         font-size: 18px;

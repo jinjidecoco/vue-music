@@ -48,3 +48,8 @@ export function getHotSong () {
   const url = urlPrefix + `/search/hot`
   return axios.get(url)
 }
+// 搜索
+export function searchSth (keyword) {
+  const url = urlPrefix + `/search?keywords=` + keyword
+  return axios.get(url)
+}

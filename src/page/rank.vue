@@ -1,5 +1,5 @@
 <template>
-  <div class='rank'>
+  <div class='rank' >
     <ul class='rank-lists'>
       <li class='rank-item' v-for ='item in playList'>
         <img class='rank-pic' :src="item.coverImgUrl" alt="">
@@ -10,12 +10,19 @@
         </div>
       </li>
     </ul>
+    <div class='loading-box' v-show ='!playList.length'>
+          <Loading></Loading>
+    </div>
   </div>
 </template>
 <script type="text/javascript">
+import Loading from "../components/loading.vue";
 import { getRank } from "../js/api.js";
 const ranklist = [3, 0, 2, 1, 4, 17];
 export default {
+  components:{
+    Loading
+  },
   created() {
     this._getRank();
   },
@@ -41,6 +48,7 @@ export default {
 </script>
 <style scoped lang='less'>
 .rank {
+   padding-top:100px;
   .rank-lists {
     // margin-top:5px;
     padding: 10px;
@@ -59,13 +67,19 @@ export default {
         margin-left: 20px;
         p {
           font-size: 14px;
-          font-weight:400;
+          font-weight: 400;
           line-height: 2;
           white-space: nowrap;
           overflow: hidden;
         }
       }
     }
+  }
+  .loading-box {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 </style>

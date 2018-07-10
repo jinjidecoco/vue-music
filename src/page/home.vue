@@ -80,6 +80,7 @@ export default {
 </script>
 <style scoped lang='less'>
 .home {
+  padding-top:100px;
   .recommond {
     padding: 3px;
     h2 {

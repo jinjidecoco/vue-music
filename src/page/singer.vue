@@ -78,6 +78,7 @@ export default {
 </script>
 <style scoped lang='less'>
 .singer{
+   padding-top:100px;
   .singerLists{
     margin-top:10px;
     li{

@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <search-bar></search-bar>
-    <tab></tab>
+    <div class='head'>
+      <search-bar></search-bar>
+      <tab></tab>
+    </div> 
     <keep-alive>
       <router-view>
       </router-view>
@@ -28,6 +30,15 @@ export default {
   -moz-ox-font-smoothing: grayscale;
   color: #2c3e50;
   /* font-family: 12px/1.5 arial,Helvetica Neue,tahoma,"Hiragino Sans GB",Microsoft YaHei,\5b8b\4f53; */
+}
+.head {
+  position:fixed;
+  width:100%;
+  z-index:10;
+  padding-bottom:200px;
+  /* top:20px; */
+
+
 }
 
 </style>
