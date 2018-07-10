@@ -43,9 +43,10 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-###效果展示：
+### 效果展示：
 ###### 首页部分  
 ![image](https://raw.githubusercontent.com/jinjidecoco/vue-music/master/src/assets/1171531187561_.pic_hd.jpg)
+
 ###### 播放器页面
 ![image](https://raw.githubusercontent.com/jinjidecoco/vue-music/master/src/assets/1201531187655_.pic.jpg)
 ###### 排行榜
