@@ -14,7 +14,10 @@ npm run dev
 # build for production with minification
 npm run build
 
-###
+# 首页部分
+![Aaron Swartz](./src/assets/1171531187561_.pic_hd.jpg)
+
+![Aaron Swartz](https://raw.githubusercontent.com/jinjidecoco/vue-music/master/src/assets/1171531187561_.pic.jpg)
 
 # build for production and view the bundle analyzer report
 
