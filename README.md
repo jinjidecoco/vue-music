@@ -48,8 +48,9 @@ npm run build
 
 ###效果展示：
 
-######  首页部分
-![image](https://raw.githubusercontent.com/jinjidecoco/vue-music/master/src/assets/1171531187561_.pic.jpg)
+######  首页部分  
+
+![image](https://github.com/jinjidecoco/vue-music/blob/master/src/assets/1171531187561_.pic.jpg)
 
 ######播放器页面
 ![image](https://raw.githubusercontent.com/jinjidecoco/vue-music/master/src/assets/1201531187655_.pic.jpg)
@@ -73,7 +74,10 @@ npm run build
 
 ## TODO
   优化页面加载速度
+
+
 ##感谢
+
 感谢 Binaryify 对接口文档 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)） 的不断维护与更新。
 
 
