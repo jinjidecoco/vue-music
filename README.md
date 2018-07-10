@@ -48,11 +48,10 @@ npm run build
 
 ###效果展示：
 
-######  首页部分  
+###### 首页部分  
+![image](https://raw.githubusercontent.com/jinjidecoco/vue-music/master/src/assets/1171531187561_.pic.jpg)
 
-![image](https://github.com/jinjidecoco/vue-music/blob/master/src/assets/1171531187561_.pic.jpg)
-
-######播放器页面
+###### 播放器页面
 ![image](https://raw.githubusercontent.com/jinjidecoco/vue-music/master/src/assets/1201531187655_.pic.jpg)
 ###### 排行榜
 ![image](https://raw.githubusercontent.com/jinjidecoco/vue-music/master/src/assets/1181531187589_.pic.jpg)
@@ -73,8 +72,8 @@ npm run build
 播放器内核、推荐页面、热榜页面、歌手页面、歌单详情、搜索页面、播放列表。
 
 ## TODO
-  优化页面加载速度
 
+  优化页面加载速度
 
 ##感谢
 
