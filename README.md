@@ -2,15 +2,40 @@
 
 > 音乐播放器
 
-## Build Setup
+## 服务端开启（[查看详情](https://github.com/Binaryify/NeteaseCloudMusicApi)）
 
 ``` bash
-# install dependencies
+
+git clone git@github.com:Binaryify/NeteaseCloudMusicApi.git
+
 npm install
 
-# serve with hot reload at localhost:8080
+node app.js
+
+##服务器启动默认端口为 3000,若不想使用 3000 端口,可使用以下命令: Mac/Linux
+
+PORT=4000 node app.js
+
+##windows 下使用 git-bash 或者 cmder 等终端执行以下命令:
+
+set PORT=4000 && node app.js
+
+```
+
+``` bash
+克隆到本地
+
+git clone https://github.com/jinjidecoco/vue-music.git
+
+安装
+
+npm install
+
+运行
+##serve with hot reload at localhost:8083
 npm run dev
 
+打包
 # build for production with minification
 npm run build
 
